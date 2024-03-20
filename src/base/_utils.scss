@@ -773,6 +773,7 @@ $xxs-media: 450px;
   font-display: swap;
 }
 
+
 //   VARS
 
 
@@ -802,6 +803,8 @@ sans serif;
 $font-montserrat: 'Petrov Sans-Trial';
 $font-porsche: 'Petrov Sans-Trial';
 $font-petrov: 'Petrov Sans-Trial';
+
+$font-open-sans: 'Open Sans';
 // $font-gilroy: 'Gilroy';
 
 $font-h2: Clamp(28.964px, 3.7vw, 48.913px);
@@ -863,8 +866,9 @@ $YRed: #E03638;
 $YGreen: #5b8930;
 $YGreyBlue: #233146;
 $YBadBlue: #00418C;
+$YPeach: #DD7373;
 
-$Buttons: #E03638;
+$Buttons: #51C0FF;
 $ButtonsHover: #992325;
 $Accent: #30006F;
 
