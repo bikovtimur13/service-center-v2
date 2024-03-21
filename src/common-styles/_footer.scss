@@ -7,11 +7,11 @@
     overflow: hidden;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 65px 0 67px;
+    padding: 32px 0 67px;
 
     @include nmd {
-        background: url("/assets/images/main-page/bg-img-footer-mobile_result.webp") no-repeat center;
-        background-size: cover;
+        // background: url("/assets/images/main-page/bg-img-footer-mobile_result.webp") no-repeat center;
+        // background-size: cover;
         padding: 10px 0 50px;
     }
 
@@ -44,13 +44,13 @@
 
     &__menu {
         li:not(:last-of-type) {
-            padding-bottom: 9px;
+            padding-bottom: 16px;
         }
         a {
             transition: all .2s linear;  
 
             &:hover {
-                color: $YBlack; 
+                color: $YPeach; 
             }
         }
         @include nmd {
@@ -60,14 +60,13 @@
 
     &__content {
         display: grid;
-        grid-template-columns: 1fr 0.8fr 1.3fr;
+        grid-template-columns: 3fr 2.5fr 1.3fr;
         grid-template-areas: 
-        "logo menu hours"
-        "phone menu cards";
+        "logo hours menu"
+        "phone site-link menu"
+        "cards site-link menu";
         grid-column-gap: 104px;
-        grid-row-gap: 28px;
-        padding-left: 35px;
-        padding-right: 21px;
+        grid-row-gap: 12px;
         
         @include nlg {
             padding-left: 16px;
@@ -101,16 +100,35 @@
         }
     }
 
-    &__phone {
-        grid-area: phone;
-        font-family: $font-petrov;
+    &__site-link{
+        grid-area: site-link;
+
+        font-family: $font-gilroy;
+        font-style: normal;
         font-weight: 800;
         font-size: 20px;
-        line-height: 25.6px;
-        text-transform: uppercase;
+        line-height: 128%;
         color: $YRealWhite;
-        padding-left: 113px;
-        padding-top: 30px;
+        padding-top: 62px;
+
+        a{
+            display: block;
+            transition: all .2s linear;  
+            &:hover{
+                color: $YPeach;
+            }
+        }
+    }
+
+    &__phone {
+        grid-area: phone;
+        font-family: $font-gilroy;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 35px;
+        letter-spacing: 0.36px;
+        color: #FFFFFF;
 
         @include nmd {
             padding-left: 0px;
@@ -125,9 +143,17 @@
 
         
         a {
+            text-decoration: underline;
+            color: #51C0FF;
             transition: all .2s;
+
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 60px;
+
             &:hover {
-                color: $YBlack;
+                text-decoration: none;
+                color: $YPeach;
             }
 
             @include nsm {
@@ -149,10 +175,41 @@
 
     &__hours {
         grid-area: hours;
+
+        span{
+            font-family: $font-gilroy;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 128%;
+            color: $YRealWhite;
+        }
+
+        p{
+            display: block;
+            font-family: $font-petrov;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 160.86%;
+            color: $YRealWhite;
+            margin-bottom: 10px;
+        }
+
+    }
+
+    &__menu-text{
+        font-family: $font-gilroy;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 160%;
+        letter-spacing: 0.02em;
+        color: #51C0FF;
     }
 
     &__cards {
         grid-area: cards;
+        margin-top: 22px;
     }
 
     &__text {
