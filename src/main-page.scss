@@ -68,9 +68,9 @@ html {
 
   @include nmd {
     height: clamp(50px, 8vw, 85px);
-    background: url('/assets/images/main-page/bg-img-header-mobile_result.webp')
-      no-repeat center;
-    background-size: cover;
+    // background: url('/assets/images/main-page/bg-img-header-mobile_result.webp')
+    //   no-repeat center;
+    // background-size: cover;
   }
 
 
@@ -321,6 +321,9 @@ html {
     @include nmd {
       height: 65px;
     }
+    @include nsm{
+      height: 0px;
+    }
   }
 
   &__menu-list {
@@ -380,7 +383,7 @@ html {
 
     img {
       @include nsm {
-        width: 53vw;
+        width: 39vw;
       }
     }
   }
@@ -403,6 +406,12 @@ html {
       left: 50%;
       transform: translateX(-50%);
     }
+
+    @include nsm{
+      padding-left: 3vw;
+      padding-right: 4vw;
+      padding-top: 4vw;
+    }
     // @include nxxs {
     //     margin-top: -8px;
     // }
@@ -420,7 +429,7 @@ html {
     margin-top: 8px;
 
     @include nsm {
-      background: url('/assets/images/main-page/menu-burger.svg') no-repeat;
+      background: url('/assets/images/main-page/menu-burger-v2.svg') no-repeat;
       background-size: cover;
       height: 5vw;
       width: 7vw;
@@ -641,8 +650,7 @@ html {
     font-weight: 700;
 
     @include nsm {
-      font-size: 4.5vw;
-      letter-spacing: 1.3px;
+      display: none;
     }
   }
 
@@ -705,6 +713,9 @@ html {
     max-width: 495px;
     margin-top: 73px;
     margin-bottom: 52px;
+    @include nsm{
+      flex-direction: column;
+    }
     a{
       box-sizing: border-box;
       display: flex;
@@ -802,8 +813,7 @@ html {
       margin-left: 13px;
     }
     @include nsm {
-      margin-left: 0px;
-      font-size: 4.3vw;
+      display: none;
     }
 
     &:hover {
@@ -1692,14 +1702,13 @@ html {
   }
 
   &__title {
-    font-family: $font-porsche;
-    font-weight: 600;
-    font-size: clamp(28.964px,3.7vw,51.913px);
+    font-family: $font-open-sans;
+    font-weight: 700;
+    font-size: clamp(28px,3.7vw,48px);
     text-align: center;
     line-height: 100%;
     color: #fff;
     margin-bottom: 22px;
-    letter-spacing: 2px;
 
     br {
       display: none;
