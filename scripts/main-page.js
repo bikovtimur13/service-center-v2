@@ -464,22 +464,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //CATEGORIES SWIPER INIT
-const categoriesSwiper = () => {
-    const swiperWrapper = document.querySelector('.service-center__categories');
-    if(swiperWrapper){
-        const swiper = new Swiper(swiperWrapper, {
-            speed: 400,
-            loop: true,
-            slidesPerView: 3.5,
-            centeredSlides: true,
-            spaceBetween: 5,
-        });
-        swiper.autoplay.stop();
-    };
-}
+// const categoriesSwiper = () => {
+//     const swiperWrapper = document.querySelector('.service-center__categories');
+//     if(swiperWrapper){
+//         const swiper = new Swiper(swiperWrapper, {
+//             speed: 400,
+//             loop: true,
+//             slidesPerView: 3.5,
+//             centeredSlides: true,
+//             spaceBetween: 5,
+//         });
+//         swiper.autoplay.stop();
+//     };
+// }
 
-try{
-    categoriesSwiper();
-}catch(err){
-    console.warn(err);
-}
+// try{
+//     categoriesSwiper();
+// }catch(err){
+//     console.warn(err);
+// }

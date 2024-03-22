@@ -10,13 +10,11 @@
     padding: 32px 0 67px;
 
     @include nmd {
-        // background: url("/assets/images/main-page/bg-img-footer-mobile_result.webp") no-repeat center;
-        // background-size: cover;
         padding: 10px 0 50px;
     }
 
     @include nsm {
-        padding: 20px 0;
+        padding: 5vw 0;
     }
 
     &__bg {
@@ -53,9 +51,6 @@
                 color: $YPeach; 
             }
         }
-        @include nmd {
-            display: none;
-        }
     }
 
     &__content {
@@ -73,19 +68,22 @@
             grid-column-gap: 74px;
         }
 
-        @include nmd {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            padding-left: 0px;
-        } 
+        // @include nmd {
+        //     display: flex;
+        //     flex-direction: column;
+        //     text-align: center;
+        //     padding-left: 0px;
+        // } 
 
         @include nsm {
+            display: grid;
             grid-template-columns: 1fr;
             grid-template-areas: 
-            "phone"
-            "hours"
-            " cards";
+            "logo logo"
+            "phone menu"
+            "cards menu"
+            "hours menu"
+            "site-link site-link";
             justify-items: center;
             text-align: center;
             grid-row-gap: 7.5vw;
@@ -94,9 +92,15 @@
 
     &__logo {
         grid-area: logo;
+        @include nsm{
+            width: 32vw;
+            padding-left: 4vw;
+        }
 
-        @include nmd {
-            display: none;
+        img{
+            @include nsm{
+                width: 100%;
+            }
         }
     }
 
@@ -118,6 +122,11 @@
                 color: $YPeach;
             }
         }
+
+        @include nsm{
+            font-size: 4vw;
+            padding-top: 2vw;
+        }
     }
 
     &__phone {
@@ -134,11 +143,8 @@
             padding-left: 0px;
         }
         @include nsm {
-            font-size: 6.2vw;
-            line-height: 8vw;
-        }
-        @include nxs {
-            padding-top: 5px;
+            font-size: 3.2vw;
+            line-height: 4vw;
         }
 
         
@@ -157,6 +163,8 @@
             }
 
             @include nsm {
+                font-size: 4vw;
+                line-height: 8vw;
                 &:hover {
                     color: $YRealWhite;
                 }
@@ -167,10 +175,6 @@
 
     &__menu {
         grid-area: menu;
-
-        @include nsm {
-            display: none;
-        }
     }
 
     &__hours {
@@ -183,6 +187,9 @@
             font-size: 22px;
             line-height: 128%;
             color: $YRealWhite;
+            @include nsm{
+                font-size: 4vw;
+            }
         }
 
         p{
@@ -205,6 +212,9 @@
         line-height: 160%;
         letter-spacing: 0.02em;
         color: #51C0FF;
+        @include nsm{
+            font-size: 4vw;
+        }
     }
 
     &__cards {
@@ -221,7 +231,7 @@
         color: $YRealWhite;
 
         @include nsm {
-            font-size: 6.88vw;
+            font-size: 3vw;
         }
         
     }
@@ -231,17 +241,26 @@
         align-items: center;
         justify-content: flex-start;
 
+        li{
+            @include nsm{
+                width: 47vw;
+            }
+        }
         
         img {
             margin-bottom: -34px;
             @include nsm {
-                width: 22.5vw;
+                width: 100%;
                 margin-bottom: 0;
             }
         }
 
         @include nmd {
             justify-content: center;
+        }
+
+        @include nsm{
+            width: 47vw;
         }
 
         

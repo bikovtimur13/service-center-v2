@@ -228,7 +228,7 @@ html {
     align-items: flex-end;
 
     @include nsm {
-      background: url('/assets/images/main-page/menu-burger.svg') no-repeat;
+      background: url('/assets/images/main-page/menu-burger-v2.svg') no-repeat;
       background-size: cover;
       height: 5vw;
       width: 7vw;
@@ -476,7 +476,7 @@ html {
 .js-menu {
   &__mob {
     position: fixed;
-    height: 294px;
+    height: 100vh;
     width: 100vw;
     z-index: 3;
     top: 0;
@@ -490,6 +490,8 @@ html {
     &_active {
       display: block;
     }
+
+    background: #464344;
   }
 
   &__mob-list {
@@ -715,6 +717,7 @@ html {
     margin-bottom: 52px;
     @include nsm{
       flex-direction: column;
+      row-gap: 2vw;
     }
     a{
       box-sizing: border-box;
@@ -727,6 +730,10 @@ html {
       height: 49px;
       border: 0.5px solid #FFFFFF;
       border-radius: 55px;
+      @include nsm{
+        height: 13vw;
+        width: 69vw;
+      }
       span{
         font-family: $font-open-sans;
         font-style: normal;
@@ -735,12 +742,21 @@ html {
         line-height: 25px;
         text-align: center;
         color: $color-white;
+        @include nsm{
+          font-size: 3.8vw;
+        }
       }
 
       &:hover{
         cursor: pointer;
         transform: scale(1.03);
         transition: all 0.25s ease-in-out;
+      }
+    }
+
+    img{
+      @include nsm{
+        width: 3vw;
       }
     }
   }
@@ -1034,6 +1050,9 @@ html {
     border-radius: 99px;
     margin: 0 auto;
     margin-bottom: 72px;
+    @include nsm{
+      display: none;
+    }
     span{
       position: relative;
       font-family: $font-open-sans;
@@ -1080,7 +1099,7 @@ html {
     }
 
     @include nsm {
-      max-width: 94vw;
+      max-width: 91vw;
       margin: 0 auto;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -1133,10 +1152,10 @@ html {
     cursor: pointer;
     background: $Buttons;
     border-radius: 15px;
-    font-family: $font-petrov;
+    font-family: $font-gilroy;
+    color: $color-gray-darkest;
     font-weight: 600;
     font-size: Clamp(16px, 2.5vw, 26.105px);
-    color: $YRealWhite;
     transition: 0.2s linear;
     height: Clamp(34px, 5vw, 70px);
     height: 100%;
@@ -1158,11 +1177,9 @@ html {
 
     @include nsm {
       border-radius: 8px;
-      height: 11.3vw;
+      height: 18.3vw;
       font-size: 5.3vw;
-    }
-    @include nxxs {
-      margin-top: 2px;
+      margin-top: 6px;
     }
   }
 
@@ -1184,8 +1201,7 @@ html {
       font-weight: 300;
 
       @include nsm {
-        font-size: 3.5vw;
-
+        font-size: 4.3vw;
       }
       @include nxs {
         transform:translateY(0)
@@ -1194,13 +1210,9 @@ html {
 
     @include nsm {
       border-radius: 8px;
-      height: 11vw;
+      height: 17vw;
+      padding-left: 6vw;
     }
-
-    @include nxxs {
-      padding-left: 13px;
-    }
-
     // @include nxs {
     // }
   }
@@ -1213,11 +1225,9 @@ html {
 
     @include nsm {
       height: 20vw;
+      padding-top: 5.7vw;
     }
 
-    @include nxxs {
-      padding-top: 6px;
-    }
   }
 
   &__city-choice {
@@ -1331,6 +1341,12 @@ html {
     color: #FFFFFF;
 
     margin-bottom: 46px;
+
+    @include nsm{
+      font-size: 7vw;
+      line-height: 7vw;
+      margin-bottom: 9vw;
+    }
   }
 
   &__form {
@@ -1353,7 +1369,7 @@ html {
     }
 
     @include nsm {
-      max-width: 94vw;
+      max-width: 91vw;
       margin: 0 auto;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -1437,17 +1453,7 @@ html {
     }
   }
 
-  // &__item:nth-child {
-  //     padding: 12px 23px 23px;
-  // }
 
-  // &__item:nth-child {
-  //     padding: 12px 23px 23px;
-  // }
-
-  // &__item:nth-child(2) {
-  //     padding: 12px 5px 23px;
-  // }
   @include nsm {
     li:nth-child(1) {
       order: 1;
@@ -1715,17 +1721,14 @@ html {
     }
 
     @include nsm {
-      font-size: 10.1vw;
-      text-align: left;
-      margin-bottom: 20px;
+      font-size: 7.1vw;
+      margin-bottom: 6vw;
 
       br {
         display: block;
       }
     }
-    @include nxxs {
-      margin-bottom: 3px;
-    }
+
   }
 
   &__subtitle {
@@ -1746,19 +1749,14 @@ html {
     }
 
     @include nsm {
-      text-align: left;
-      font-size: 4vw;
+      font-size: 4.5vw;
+      line-height: 6.2vw;
+      margin-bottom: 7vw;
 
       br {
         display: block;
       }
     }
-    @include nxxs {
-      margin-bottom: 28px;
-    }
-    // @include nxxs {
-    //     font-size: Clamp(13px, 1.6vw, 20px);
-    // }
   }
 
   &__list {
@@ -1868,16 +1866,10 @@ html {
 
     h4 {
       @include nsm {
-        margin-left: 20px;
-        margin-bottom: 15px;
-        margin-top: 30px;
-      }
-      @include nxs {
-        margin-bottom: 0px;
-        margin-top: 0px;
-      }
-      @include nsm {
-        margin-left: 13px;
+        font-size: 4.6vw;
+        margin-left: 3vw;
+        margin-bottom: 1.7vw;
+        margin-top: 2vw;
       }
     }
   }
@@ -1904,12 +1896,21 @@ html {
 .procedure{
   padding-bottom: 91px;
 
+  @include nsm{
+    padding-bottom: 5vw;
+  }
+
   &__content{
     display: flex;
     flex-wrap: wrap;
 
     font-family: $font-open-sans;
     font-style: normal;
+    @include nsm{
+      flex-direction: column;
+      flex-wrap: nowrap;
+      row-gap: 4vw;
+    }
   }
   &__heading{
     font-family: $font-open-sans;
@@ -1920,6 +1921,12 @@ html {
     text-align: center;
     color: $color-white;
     margin-bottom: 61px;
+    @include nsm{
+      font-size: 7vw;
+      line-height: 8vw;
+      margin-top: 9vw;
+      margin-bottom: 7vw;
+    }
   }
   &__title-heading{
     font-family: $font-gilroy;
@@ -1929,6 +1936,10 @@ html {
     line-height: 27px;
     color: #FFFFFF;
     margin-bottom: 6px;
+
+    @include nsm{
+      font-size: 5vw;
+    }
     
     span{
       font-family: $font-open-sans;
@@ -1938,6 +1949,10 @@ html {
       text-align: center;
       color: $YPeach;
       margin-right: 15px;
+      @include nsm{
+        margin-right: 2vw;
+        font-size: 12.5vw;
+      }
     }
 
     p{
@@ -1945,15 +1960,6 @@ html {
     }
   }
   &__title-content{
-    ul {
-      list-style: disc;
-      list-style-position: inside
-    }
-
-    li {
-      margin: 0 0 35px;
-    }
-
     font-family: $font-gilroy;
     font-style: normal;
     font-weight: 300;
@@ -1961,9 +1967,35 @@ html {
     line-height: 30px;
     letter-spacing: 0.36px;
     color: #FFFFFF;
+
+    @include nsm{
+      font-size: 4.2vw;
+      line-height: 7.9vw;
+    }
+
+    ul {
+      list-style: disc;
+      list-style-position: inside
+    }
+
+    li {
+      margin: 0 0 35px;
+      @include nsm{
+        margin: 0 0 3vw;
+      }
+    }
+
+    br{
+      @include nsm{
+        display: none;
+      }
+    }
   }
   &__title{
     width: 50%;
+    @include nsm{
+      width: 100%;
+    }
   }
 }
 
@@ -2371,12 +2403,6 @@ html {
   padding: 10px 0 100px;
   font-family: 'Gilroy';
 
-  @include nmd {
-    // background: url('/assets/images/main-page/bg-img-questions-mobile_result.webp')
-    //   no-repeat center;
-    // background-size: cover;
-  }
-
   @include nsm {
     padding-bottom: 60px;
   }
@@ -2397,22 +2423,18 @@ html {
 
 
     @include nsm {
-      font-size: 12vw;
-      margin-bottom: 9.8vw;
+      font-size: 7vw;
+      margin-bottom: 11.8vw;
     }
   }
 
   &__list {
     font-family: $font-gilroy;
-    // margin: 0 91px 0 58px;
 
     @include nlg {
       margin: 0;
     }
 
-    @include nxs {
-      padding-left: 20px;
-    }
 
     li {
       font-family: $font-petrov;
@@ -2428,7 +2450,7 @@ html {
   }
 
   &__question {
-    font-family: $font-petrov;
+    font-family: $font-gilroy;
     padding-right: 20px;
     position: relative;
     font-weight: 800;
@@ -2446,9 +2468,11 @@ html {
       br {
         display: block;
       }
-    @include nxs {
-      font-size: 4.375vw;
     }
+
+    @include nsm{
+      font-size: 5vw;
+      letter-spacing: 0.01em;
     }
   }
 
@@ -2471,6 +2495,9 @@ html {
       bottom: -1px;
       height: 2px;
       background: linear-gradient(90deg, rgba(255, 255, 255, 0.44) 0%, rgba(29, 115, 243, 0.44) 129.61%);
+      @include nsm{
+        bottom: 8vw;
+      }
     }
   }
 
@@ -2478,8 +2505,8 @@ html {
     // margin-bottom: 35px;
     margin-bottom: 27px;
 
-    @include nxxs {
-      margin-bottom: -10px;
+    @include nsm {
+      margin-bottom: -4vw;
     }
   }
 
@@ -2490,7 +2517,12 @@ html {
     content: url('/assets/images/main-page/arrow-white-v2.svg');
     transform: rotate(0deg);
     transition: transform 0.2s ease-in;
-    // margin: 10px;
+    
+    @include nsm{
+      top: 50%;
+      transform: translateY(-50%);
+      content: url('/assets/images/main-page/arrow-white-v2-mobile.svg');
+    }
   }
 
   ._active::after {
@@ -2512,15 +2544,10 @@ html {
     max-height: 0;
 
     @include nmd {
-      font-size: 20px;
-      line-height: 130%;
+      font-size: 4.4vw;
+      line-height: 7.5vw;
     }
 
-    @include nxxs {
-      font-size: 14px;
-      margin-left: -15px;
-      margin-top: 18px;
-    }
   }
 }
 
@@ -3205,7 +3232,7 @@ html {
 
 .service-center__textarea {
   @include nsm {
-    height: 24vw;
+    height: 40vw;
   }
 }
 
@@ -3222,5 +3249,12 @@ html {
   &:hover {
     background: $YRed;
     color: $YRealWhite;
+  }
+}
+
+.br-mobile{
+  display: none;
+  @include nsm{
+    display: block;
   }
 }
