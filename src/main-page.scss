@@ -368,6 +368,18 @@ html {
       color: $YRealWhite;
       font-size: Clamp(18px, 3vw, 105px);
     }
+    
+    @include nsm{
+      margin: 0 auto;
+      width: 54vw;
+      transform: translateX(3vw);
+    }
+
+    img{
+      @include nsm{
+        width: 100%;
+      }
+    }
   }
 
   &__mobile {
@@ -476,16 +488,14 @@ html {
 .js-menu {
   &__mob {
     position: fixed;
-    height: 100vh;
+    height: 60vh;
     width: 100vw;
     z-index: 3;
     top: 0;
     background-color: $YBlack;
     display: none;
-
-    background: url('/assets/images/main-page/bg-img-burger_result.webp')
-      no-repeat center;
-    background-size: cover;
+    background: #464344;
+    border-radius: 0 0 15px 15px;
 
     &_active {
       display: block;
@@ -501,10 +511,50 @@ html {
     position: relative;
     padding: 0 14px;
     max-width: 708px;
+    @include nsm{
+      justify-content: center;
+      margin-top: unset;
+      flex-direction: column;
+    }
   }
 
-  &__mob-item:nth-of-type(3) {
-    text-transform: uppercase;
+  &__bottom{
+    display: none;
+
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8vw;
+    &:after{
+      content: "";
+      width: 100vw;
+      position: absolute;
+      left: 50%;
+      top: 1px;
+      height: 1px;
+      background: #333;
+      background: linear-gradient(90deg,#fff 0,#1d73f3 129.61%);
+      transform: translateX(-50%);
+    }
+
+    @include nsm{
+      display: flex;
+    }
+  }
+
+  &__mob-phone-link{
+    @include nsm{
+      font-size: 3.6vw;
+      line-height: 4vw;
+      font-family: $font-gilroy;
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      &:hover{
+        color: $YPeach;
+      }
+    }
   }
 
   &__mob-item {
@@ -515,6 +565,10 @@ html {
     font-size: 16px;
     line-height: 20px;
     color: $YRealWhite;
+    @include nsm{
+      margin-bottom: 8vw;
+      text-align: center;
+    }
   }
 
   &__mob-img {
@@ -529,6 +583,11 @@ html {
     font-size: 25px;
     line-height: 100%;
     margin-top: 0px;
+    @include nsm{
+      font-size: 5vw;
+      margin-top: 5vw;
+      margin-right: 3vw;
+    }
   }
 }
 
@@ -585,7 +644,7 @@ html {
     flex-wrap: wrap;
 
     @include nsm {
-      padding: 5px 3px 13px;
+      padding: 6vw 3px 13px;
     }
   }
 
@@ -885,9 +944,10 @@ html {
     position: absolute;
     width: 100%;
     z-index: 50000;
-    background: url('/assets/images/main-page/bg-img-cities_result.webp')
-      no-repeat center;
-    background-size: cover;
+    background-color: #464344;
+    // background: url('/assets/images/main-page/bg-img-cities_result.webp')
+    //   no-repeat center;
+    // background-size: cover;
 
     @include nmd {
       margin-left: 13px;
@@ -3256,5 +3316,201 @@ html {
   display: none;
   @include nsm{
     display: block;
+  }
+}
+
+
+// about.html
+.about{
+
+  background: url('/assets/images/about/about-bgr-v1-desc.webp');
+  background-size: cover;
+
+  @include nsm {
+    background: none;
+  }
+
+  &__wrapper{
+    position: relative;
+    padding: 10px 0 1px;
+    margin: -110px 0 0;
+    padding-top: 205px; 
+    @include nsm{
+      padding-top: 53vw;
+    }
+  }
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__heading{
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 99px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    @include nsm{
+      font-size: 10.5vw;
+    }
+  }
+  &__sub-heading{
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+
+    margin-top: 55px;
+    margin-bottom: 107px;
+
+    @include nsm{
+      font-size: 5vw;
+      margin-top: 6vw;
+      line-height: 7vw;
+      margin-bottom: 7vw;
+    }
+  }
+  &__text-heading{
+    display: block;
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 43px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: $YPeach;
+    margin-bottom: 47px;
+    @include nsm{
+      font-size: 4.7vw;
+      line-height: 6.3vw;
+      margin-bottom: 10vw;
+    }
+  }
+  &__title-block{
+    display: flex;
+    max-width: 1050px;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 100px;
+    @include nsm{
+      margin-bottom: 6vw;
+      flex-direction: column-reverse;
+      &:nth-of-type(2){
+        flex-direction: column;
+      }
+    }
+  }
+  &__title-text{
+    display: block;
+    font-family: $font-gilroy;
+    font-weight: 300;
+    font-size: clamp(14px,1.3vw,22px);
+    line-height: 178%;
+    color: #fff;
+    max-width: 642px;
+    &:nth-of-type(1){
+      margin-top: 37px;
+      max-width: 681px;
+    }
+    &:nth-of-type(2){
+      @include nsm{
+        margin-top: 3vw;
+      }
+    }
+  }
+  &__title-img{
+    @include nsm{
+      width: 100%;
+    }
+  }
+  &__callback-form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #464344;
+    padding: 18px;
+    margin-bottom: 85px;
+    @include nsm{
+      flex-direction: column;
+      padding: 5vw;
+    }
+  }
+
+  &__callback-form-heading{
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 43px;
+    line-height: 130%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    margin-top: 26px;
+    @include nsm{
+      font-size: 6.35vw;
+      line-height: 10vw;
+      margin-top: unset;
+    }
+  }
+
+  &__callback-form-descr{
+    max-width: 594px;
+    padding-left: 41px;
+    @include nsm{
+      padding-left: unset;
+    }
+  }
+
+  &__callback-form-btn{
+    width: 566px;
+    height: 70px;
+    background: #51C0FF;
+    border-radius: 15px;
+    margin-top: 48px;
+
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26.1053px;
+    line-height: 32px;
+    color: #181818;
+
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.03);
+      transition: all .3s ease-in-out;
+    }
+
+    @include nsm{
+      width: 100%;
+      margin-top: 11vw;
+      height: 15vw;
+      font-size: 6vw;
+    }
+  }
+
+  &__callback-form-img-mobile{
+    display: none;
+    width: 100%;
+    @include nsm{
+      display: block;
+    }
+  }
+
+  &__callback-form-img{
+    width: 100%;
+    @include nsm{
+      display: none;
+    }
   }
 }
