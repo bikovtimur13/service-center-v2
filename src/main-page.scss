@@ -61,16 +61,8 @@ html {
   width: 100%;
   transition: opacity 0.3s linear;
 
-  // background: url('/assets/images/main-page/bg-img-header_result.webp')
-  //   no-repeat center;
-  // background-size: cover;
-
-
   @include nmd {
     height: clamp(50px, 8vw, 85px);
-    // background: url('/assets/images/main-page/bg-img-header-mobile_result.webp')
-    //   no-repeat center;
-    // background-size: cover;
   }
 
 
@@ -264,7 +256,7 @@ html {
   .service-center__top {
     @include nmd {
       padding-top: 40px;
-      // max-width: 708px;
+      display: none;
     }
     @include nsm {
       padding-top: 20px;
@@ -755,14 +747,6 @@ html {
   }
 
   &__heading-bottom{
-    // font-family: $font-open-sans;
-    // font-style: normal;
-    // font-weight: 700;
-    // font-size: 138px;
-    // line-height: 165px;
-    // text-align: center;
-    // letter-spacing: -11px;
-    // color: $YPeach;
     margin-top: -23px;
   }
 
@@ -1136,6 +1120,12 @@ html {
           background: linear-gradient(90deg, #FFFFFF 0%, #1D73F3 129.61%);
         }
       }
+    }
+
+    &.swiper-wrapper{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
     }
   }
 
@@ -2611,12 +2601,20 @@ html {
   }
 }
 
+.contacts-page{
+  background: url(/assets/images/about/about-bgr-v1-desc.webp);
+  background-size: cover;
+  @include nsm{
+    background: unset;
+  }
+}
+
 .contacts {
-    padding-top: 70px;
+  position: relative;
+  padding: 205px 0 1px;
+  margin: -110px 0 0;
   @include nsm {
-    .container-box {
-      padding: 0;
-    }
+    margin: -44vw 0 0;
   }
 
   @include nmd {
@@ -2645,10 +2643,9 @@ html {
     display: grid;
     grid-template-columns: 1.9fr 1.3fr;
     gap: 20px;
-    grid-template-areas:
-      'brands phone'
-      'hours form'
-      'trade-in form';
+    grid-template-areas: "brands phone"
+    "hours trade-in"
+    "form form";
 
     @include nmd {
       grid-template-columns: 1fr;
@@ -2666,33 +2663,18 @@ html {
     }
   }
 
-  &__white-bgc:first-of-type {
-    @include nxs {
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-    }
-  }
-
   &__white-bgc {
     background-color: $YRealWhite;
     border-radius: 15px;
 
     @include nmd {
-      border-radius: 6.887px;
+      border-radius: 3vw;
     }
   }
 
   &__gray-bgc {
-    background-color: #2fcdff;
+    background-color: #464344;
     border-radius: 15px;
-
-    @include nmd {
-      background: none;
-    }
-
-    @include nxs {
-      margin-right: 12px;
-    }
   }
 
   &__brands {
@@ -2700,19 +2682,14 @@ html {
     grid-area: brands;
 
     @include nsm {
-      // padding: 7px 21px 15px 23px;
-      padding: 2vw 4vw 3vw 4vw;
+      padding: 4vw 4vw 5.7vw 4vw;
     }
 
-    @include nxs {
-      padding: 4vw 4vw 3.7vw 4vw;
-    }
   }
 
   &__subtitle {
     font-family: $font-petrov;
     font-weight: 400;
-    // font-size: Clamp(20px, 2.2vw, 30px);
     font-size: clamp(26px, 1.6vw, 30px);
     line-height: 160%;
     color: $color-black;
@@ -2721,14 +2698,9 @@ html {
     align-items: center;
 
     @include nsm {
-      font-size: 4.7vw;
-      margin-bottom: 1vw;
+      font-size: 4.5vw;
+      margin-bottom: 5vw;
       padding-left: 7vw;
-    }
-
-    @include nxs {
-      margin-bottom: 2vw;
-      padding-left: 8vw;
     }
 
     &_centers {
@@ -2813,8 +2785,10 @@ html {
     align-items: center;
     position: relative;
 
-    @include nxs {
-      padding: 0 12px;
+    @include nsm{
+      justify-content: space-around;
+      flex-wrap: wrap;
+      row-gap: 5vw;
     }
 
     & > li {
@@ -2835,7 +2809,7 @@ html {
         width: 25%;
       }
       @include nmd {
-        width: 28%;
+        width: 43%;
       }
     }
   }
@@ -2892,16 +2866,13 @@ html {
     @include nmd {
       flex-direction: row;
       padding: 0;
+    }
 
-      &::before {
-        content: url('/assets/images/main-page/phone.svg');
-        margin-right: 20px;
-
-        @include nxs {
-          content: url('/assets/images/main-page/phone-mobile.svg');
-          margin-right: 12px;
-        }
-      }
+    @include nsm{
+      display: flex;
+      flex-direction: column;
+      border-radius: 3vw;
+      padding: 6vw 0 10vw;
     }
 
     p {
@@ -2918,10 +2889,16 @@ html {
         position: absolute;
         right: 199px;
         top: 2px;
+
+        @include nsm{
+          right: 51vw;
+          top: 0vw;
+        }
       }
 
-      @include nmd {
-        display: none;
+      @include nsm{
+        font-size: 5vw;
+        line-height: 7vw;
       }
     }
 
@@ -2962,14 +2939,15 @@ html {
   &__phone-ancor-big {
     font-family: $font-petrov;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 800;
     font-size: Clamp(15px, 4vw, 50px);
     line-height: 85px;
     color: $YRealWhite;
     transition: 0.2s;
 
     &:hover {
-      color: #5308b6;
+      color: $YPeach;
+      transition: all 0.3s ease-in-out;
     }
 
     @include nlg {
@@ -3066,6 +3044,48 @@ html {
     }
   }
 
+  &__form-wrapper{
+    display: flex;
+    justify-content: space-between;
+    @include nmd{
+      flex-direction: column;
+      row-gap: 4vw;
+    }
+  }
+
+  &__form-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 49%;
+    row-gap: 16px;
+    @include nmd{
+      width: 100%;
+      row-gap: 4vw;
+    }
+  }
+
+  &__form-heading{
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 99px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 60px;
+
+    @include nsm{
+      font-size: 10.5vw;
+      line-height: 12vw;
+      margin-bottom: 9vw;
+    }
+  }
+
+
   &__form {
     position: relative;
     display: flex;
@@ -3076,13 +3096,14 @@ html {
     overflow: visible;
 
     @include nmd {
-      background-color: $YRealWhite;
       border-radius: 15px;
-      padding: 14px 11px 14px 12px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       gap: 10px;
+      padding: 14px 0 14px;
+      background-color: unset;
     }
+
   }
 
   &__err {
@@ -3111,7 +3132,7 @@ html {
     font-size: 22px;
     line-height: 27px;
     color: #939393;
-    height: 58px;
+    height: 70px;
     padding-left: 24px;
     border: none;
 
@@ -3120,23 +3141,21 @@ html {
       height: 48px;
     }
 
-    @include nsm {
+    @include nmd {
       font-size: 3.5vw;
       padding-left: 5.5vw;
+      border-radius: 4vw;
+      height: 15vw;
     }
 
-    @include nxs {
-      font-size: 5.3vw;
-    }
+    // @include nxs {
+    //   font-size: 5.3vw;
+    // }
   }
-
-  // &__input-wrapper {
-  //     margin-bottom: 2%;
-  // }
 
   &__textarea {
     resize: none;
-    height: 247px;
+    height: 156px;
     padding-top: 19px;
 
     @include nmd {
@@ -3152,13 +3171,15 @@ html {
 
   &__button {
     background: $Buttons;
-    height: 58px;
+    height: 70px;
     border-radius: 15px;
     font-family: $font-petrov;
     color: $YRealWhite;
     font-weight: 600;
     font-size: 26.105px;
     line-height: 100%;
+
+    width: 100%;
     cursor: pointer;
     transition: 0.2s linear;
 
@@ -3168,10 +3189,11 @@ html {
     }
 
     @include nmd {
-      height: 48px;
+      height: 15vw;
+      border-radius: 4vw;
 
       &:hover {
-        background-color: $YRed;
+        background-color: $YPeach;
         color: $YRealWhite;
       }
     }
@@ -3182,13 +3204,6 @@ html {
 }
 
 .modal-thanks {
-  // top: 50%;
-  // left: -1000px;
-  // transform: translate(-50%, -50%);
-  // opacity: 1;
-
-  // display: none;
-  // opacity: 0;
 
   &__overlay {
     position: fixed;
@@ -3307,7 +3322,7 @@ html {
   opacity: 0.2;
 
   &:hover {
-    background: $YRed;
+    background: $YPeach;
     color: $YRealWhite;
   }
 }
@@ -3418,6 +3433,12 @@ html {
     line-height: 178%;
     color: #fff;
     max-width: 642px;
+
+    @include nsm{
+      font-size: 4.5vw;
+      line-height: 7.4vw;
+    }
+
     &:nth-of-type(1){
       margin-top: 37px;
       max-width: 681px;
@@ -3425,6 +3446,16 @@ html {
     &:nth-of-type(2){
       @include nsm{
         margin-top: 3vw;
+      }
+    }
+    &.form{
+      @include nsm{
+        margin-top: 3vw;
+      }
+    }
+    &.chair{
+      @include nsm{
+        margin-top: -6vw;
       }
     }
   }
@@ -3491,9 +3522,14 @@ html {
       transition: all .3s ease-in-out;
     }
 
+    @include nlg{
+      width: 411px;
+      margin-top: 20px;
+    }
+
     @include nsm{
       width: 100%;
-      margin-top: 11vw;
+      margin-top: 9vw;
       height: 15vw;
       font-size: 6vw;
     }
@@ -3504,13 +3540,90 @@ html {
     width: 100%;
     @include nsm{
       display: block;
+      margin-top: 4vw;
     }
   }
 
   &__callback-form-img{
-    width: 100%;
     @include nsm{
+      width: 100%;
       display: none;
     }
   }
+}
+
+.delivery{
+  background: url(/assets/images/about/about-bgr-v1-desc.webp);
+  background-size: cover;
+  @include nsm{
+    background: unset;
+  }
+
+  &__wrapper{
+    position: relative;
+    padding: 205px 0 1px;
+    margin: -110px 0 0;
+    @include nsm {
+      margin: -44vw 0 0;
+    }
+  }
+
+  &__heading{
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 99px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 60px;
+
+    @include nsm{
+      font-size: 10.5vw;
+      line-height: 12vw;
+      margin-bottom: 9vw;
+    }
+  }
+
+  &__sub-heading{
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: $color-white;
+  }
+
+  &__title{
+    font-family: $font-open-sans;
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27.7749px;
+    line-height: 38px;
+    text-align: center;
+    color: $color-white;
+  }
+
+  &__options{
+
+  }
+
+  &__option{
+    display: flex;
+  }
+
+  &__option-content{
+
+  }
+
+  &__after-heading{
+
+  }
+  
 }
