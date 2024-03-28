@@ -4623,7 +4623,127 @@ html {
 
 
 .guarantees{
+  background: url(/assets/images/about/about-bgr-v1-desc.webp);
+  background-size: cover;
+  @include nsm{
+    background: unset;
+  }
+
   &__wrapper{
-    
+    padding: 189px 0 1px;
+    margin-top: -110px;
+    @include nsm {
+    padding: 49vw 10px 10px 10px;
+    margin: -36vw 0 0;
+    }
+  }
+
+  &__form-heading{
+    font-family: $font-open-sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 99px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 60px;
+
+    @include nsm{
+      font-size: 10.5vw;
+      line-height: 12vw;
+      margin-bottom: 9vw;
+    }
+  }
+
+  &__title{
+    font-family: $font-open-sans;
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: Clamp(16px, 4vw, 27px);
+    line-height: 38px;
+    text-align: center;
+    color: $color-white;
+
+    margin-top: 43px;
+    margin-bottom: 94px;
+
+    @include nsm{
+      margin-top: 6vw;
+      font-size: 5vw;
+      line-height: 7vw;
+      margin-bottom: 12vw;
+    }
+
+    br{
+      @include nsm{
+        display: none;
+      }
+    }
+  }
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  &__content-item{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__sub-heading{
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+    text-align: center;
+
+    &.warning{
+      text-transform: uppercase;
+      color: #DD7373;
+    }
+  }
+
+  &__content-item{
+    background-color: #464344;
+    border-radius: 15px;
+    padding: 2%;
+
+    &:first-child{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: unset;
+      padding: unset;
+    }
+
+    ul {
+      list-style: disc;
+      list-style-position: inside
+    }
+  }
+  
+  &__content-sub-item{
+    background-color: #464344;
+    border-radius: 15px;
+    padding: 2%;
+  }
+
+  &__text{
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.36px;
+    color: $color-white;
   }
 }
