@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sendForm(event) {
             let formData = new FormData(this.form);
 
-            const firstForm = document.querySelector('.service-center__form')
+            const firstForm = document.querySelector('.repair-request-form__form')
             const secondForm = document.querySelector('.contacts__form')
 
             const elementsFirstForm = firstForm.elements
@@ -446,40 +446,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     new ValidationForm(document.querySelector('.contacts__form')).initForm();
-    new ValidationForm(document.querySelector('.service-center__form')).initForm();
+    new ValidationForm(document.querySelector('.repair-request-form__form')).initForm();
 
 
 })
 
 
-//Скролл к контактам
-// const scrollButton = document.querySelectorAll('.scrollButton')
-// scrollButton.forEach(e => {
-//     e.addEventListener('click', () => {
-//         document.getElementById('contacts').scrollIntoView({
-//             behavior: 'smooth'
-//             });
-//     })
-// }) 
+        // // модальное окно с формой
+        // const button = document.querySelector('.about__callback-form-btn');
+        // const close = document.querySelector('.pop-up-form__close');
+        // const popUp = document.querySelector('.pop-up-wrapper');
+        // const background = document.querySelector('.pop-up-background');
+
+        // // кнопка отрытия отбивки
+        // const aboutButton = document.querySelector('.pop-up-form__button-about');
+
+        // // отбивка
+        // const popUpMain = document.querySelector('.pop-up-order');
+        // const closeMain = document.querySelector('.pop-up-order__close');
 
 
-//CATEGORIES SWIPER INIT
-// const categoriesSwiper = () => {
-//     const swiperWrapper = document.querySelector('.service-center__categories');
-//     if(swiperWrapper){
-//         const swiper = new Swiper(swiperWrapper, {
-//             speed: 400,
-//             loop: true,
-//             slidesPerView: 3.5,
-//             centeredSlides: true,
-//             spaceBetween: 5,
-//         });
-//         swiper.autoplay.stop();
-//     };
-// }
+        // button.addEventListener('click', () => {
+        //     popUp.classList.add('_active')
+        //     background.classList.add('_active')
+        // });
+        // // Открывает отбивку и закрывает поп ап с формой
+        // function popUpIsOpen() {
+        //     popUpMain.classList.add('_active')
+        //     popUp.classList.remove('_active')
+        // }
 
-// try{
-//     categoriesSwiper();
-// }catch(err){
-//     console.warn(err);
-// }
+        // close.addEventListener('mousedown', () => {
+        //     popUp.classList.remove('_active')
+        //     background.classList.remove('_active')
+        // });
+
+        // background.addEventListener('click', () => {
+        //     background.classList.remove('_active')
+        //     popUpMain.classList.remove('_active')
+        //     popUp.classList.remove('_active')
+
+        // });
+
+
