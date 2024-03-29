@@ -19,6 +19,7 @@
     <title>Сервисный центр массажного оборудования, массажных кресел, массажеров и фитнес тренажеров | Yamaguchi</title>
 </head>
 <body>
+    <div class="pop-up-background"></div>
     <div class="header-fixed">
         <div class="header-fixed__mobile-menu">
             <div class="header__logo">
@@ -268,28 +269,37 @@
                         </div>
                     </div>
             
-                    <form class="contacts__form">
+                    <form class="contacts__form" id="form3" action="#">
                         <div class="contacts__form-wrapper">
                             
-                            <div class="contacts__form-block">
+                            <div class="contacts__form-block" >
                                 <div class="__js__input-wrapper contacts__input-wrapper">
-                                    <input class="contacts__input __js__input " type="text" name="name" placeholder="Имя" pattern="[A-Za-zА-яа-я]{2,}" required>
+                                    <input class="contacts__input __js__input form__input _req" type="text" name="name" placeholder="Имя">
                                     <p class="__js__err contacts__err">Пожалуйста, введите Ваше имя</p>
                                 </div>
                                 <div class="__js__input-wrapper contacts__input-wrapper">
-                                    <input class="contacts__input __js__input" type="tel" name="tel" placeholder="Телефон для связи" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+                                    <input class="contacts__input __js__input form__input _req _phone" type="tel" name="tel" placeholder="Телефон для связи">
                                     <p class="__js__err contacts__err">Пожалуйста, введите номер телефона</p>
                                 </div>
                                 <div class="__js__input-wrapper contacts__input-wrapper">
-                                    <input class="contacts__input __js__input " type="email" name="email" placeholder="Ваш e-mail" pattern="\S+\.[a-z]{2,4}$" required>
+                                    <input class="contacts__input __js__input form__input _req _email" type="email" name="email" placeholder="Ваш e-mail">
                                     <p  class="__js__err contacts__err">Введите корректный адрес электронной почты</p>
+                                </div>
+                            </div>
+                            <div class="pop-up-order">
+                                <div class="pop-up-order__wrapper">
+                                    <img src="../assets/images/pop-up/item.svg" alt="Ок" class="pop-up-order__img">
+                                    <span class="pop-up-order__subtitle">Спасибо!</span>
+                                    <span class="pop-up-order__number-text">Номер вашей заявки <span class="pop-up-order__number"> 7845</span></span>
+                                    <span class="pop-up-order__text">Наш менеджер свяжется с вами в течение 30 минут</span>
+                                    <img src="../assets/images/pop-up/close.svg" alt="закрыть" class="pop-up-order__close">
                                 </div>
                             </div>
                         
                             <div class="contacts__form-block">
                                 <textarea class="contacts__input contacts__textarea __js__input contacts__input-wrapper" name="message"
                                 placeholder="Модель Вашего оборудования, симптомы поломки"></textarea>
-                                <button class="contacts__button _disabled " type="submit">Отправить заявку</button>
+                                <button class="contacts__button" type="submit">Отправить заявку</button>
                             </div>
 
                         </div>
@@ -345,6 +355,7 @@
     </main>
 
     <script src="/scripts/imask.js"></script>
+    <script src="/scripts/contacts.js"></script>
     <script src="/scripts/main-page.js"></script>
 </body>
 </html>

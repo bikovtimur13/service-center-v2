@@ -308,184 +308,285 @@ document.addEventListener('DOMContentLoaded', () => {
     //     hideUnhideMenuOnScroll();
 
 
-    class ValidationForm {
-        constructor(form) {
-            this.form = form;
-            this.inputWrappers = this.form.querySelectorAll('div');
-            this.button = this.form.querySelector('button');
-            this.inputs = this.form.querySelectorAll('.__js__input');
-            this.modalThanks = document.querySelector('.modal-thanks__overlay');
-            this.modalCloseButton = document.querySelector('.modal-thanks__close');
-            this.inputs.forEach(element => {
-                if (element.name == 'name') {
-                    this.name = element
-                } else if (element.name == 'tel') {
-                    this.tel = element
-                } else if (element.name == 'email') {
-                    this.email = element
-                } else if (element.name == 'message') {
-                    this.message = element
-                }
-            })
+    //     class ValidationForm {
+    //         constructor(form) {
+    //             this.form = form;
+    //             this.inputWrappers = this.form.querySelectorAll('div');
+    //             this.button = this.form.querySelector('button');
+    //             this.inputs = this.form.querySelectorAll('.__js__input');
+    //             this.modalThanks = document.querySelector('.modal-thanks__overlay');
+    //             this.modalCloseButton = document.querySelector('.modal-thanks__close');
+    //             this.inputs.forEach(element => {
+    //                 if (element.name == 'name') {
+    //                     this.name = element
+    //                 } else if (element.name == 'tel') {
+    //                     this.tel = element
+    //                 } else if (element.name == 'email') {
+    //                     this.email = element
+    //                 } else if (element.name == 'message') {
+    //                     this.message = element
+    //                 }
+    //             })
+    //         }
+
+    //         initForm() {
+
+    //             const phoneOptions = {
+    //                 mask: '+{7} (000) 000-00-00',
+    //             };
+
+    //             new IMask(this.tel, phoneOptions);
+
+    //             this.inputWrappers.forEach(wrapper => {
+    //                 const input = wrapper.querySelector('input');
+    //                 const errText = wrapper.querySelector('p');
+    //                 input.addEventListener('input', (event) => this.handleInputChanges(event, input, errText));
+    //                 input.addEventListener('blur', (event) => this.handleInputBlur(event, input, errText));
+    //             })
+
+    //             this.button.addEventListener('click', (event) => {
+    //                 event.preventDefault();
+    //                 let isValid = this.form.checkValidity()
+    //                 if (isValid) {
+    //                     this.sendForm(event);
+    //                 }
+    //             })
+    //         }
+
+    //         setBtnDisabled() {
+    //             this.button.disabled = true;
+    //             this.button.classList.add('_disabled');
+    //         }
+
+    //         setBtnActive() {
+    //             this.button.disabled = false;
+    //             this.button.classList.remove('_disabled');
+    //         }
+
+    //         handleInputChanges = (event, input, errText) => {
+    //             (this.form.checkValidity()) ? this.setBtnActive() : this.setBtnDisabled();
+
+    //             if (input.validity.valid && errText.classList.contains('_unhide')) {
+    //                 errText.classList.remove('_unhide');
+    //             }
+
+    //         }
+
+    //         handleInputBlur = (event, input, errText) => {
+    //             if (!input.validity.valid) {
+    //                 errText.classList.add('_unhide');
+    //             }
+    //         }
+
+    //         sendForm(event) {
+    //             let formData = new FormData(this.form);
+
+    //             const firstForm = document.querySelector('.repair-request-form__form')
+    //             const secondForm = document.querySelector('.contacts__form')
+
+    //             const elementsFirstForm = firstForm.elements
+    //             const elementsSecondForm = secondForm.elements
+
+    //             for (let i = 0; i < elementsFirstForm.length; i++) {
+    //                 elementsFirstForm[i].setAttribute('disabled', 'true');
+    //                 this.button.classList.add('_disabled');
+    //             }
+
+    //             for (let i = 0; i < elementsSecondForm.length; i++) {
+    //                 elementsSecondForm[i].setAttribute('disabled', 'true');
+    //                 this.button.classList.add('_disabled');
+    //             }
+
+    //             fetch('/post.php', {
+    //                 method: 'POST',
+    //                 body: formData,
+    //                 headers: {
+    //                     'Access-Control-Allow-Origin': "*"
+    //                 }
+    //             }).then(response => {
+    //                 for (let i = 0; i < elementsFirstForm.length; i++) {
+    //                     elementsFirstForm[i].removeAttribute('disabled');
+    //                     this.button.classList.remove('_disabled');
+    //                 }
+    //                 for (let i = 0; i < elementsSecondForm.length; i++) {
+    //                     elementsSecondForm[i].removeAttribute('disabled');
+    //                     this.button.classList.remove('_disabled');
+    //                 }
+
+    //                 return response.json()
+    //             })
+    //                 .then(data => {
+    //                     console.log(data);
+    //                     var orderNumberElement = document.querySelector('.__js__order-number');
+
+    //                     // Установить значение элемента
+    //                     orderNumberElement.textContent = data.id;
+
+    //                     this.showModal();
+    //                     this.form.reset();
+    //                 })
+    //                 .catch(err => {
+    //                     console.log(err);
+    //                 })
+    //         }
+
+
+    //         hideModal() {
+    //             this.modalThanks.addEventListener('click', (e) => {
+    //                 if (e.target === e.currentTarget || e.target.classList.contains('modal-thanks__close')) {
+    //                     this.modalThanks.classList.remove('modal-thanks__overlay_active');
+    //                 }
+    //             });
+    //         }
+
+    //         showModal() {
+    //             this.modalThanks.classList.add('modal-thanks__overlay_active');
+    //             this.hideModal();
+    //         }
+    //     }
+
+    //     new ValidationForm(document.querySelector('.contacts__form')).initForm();
+    //     new ValidationForm(document.querySelector('.repair-request-form__form')).initForm();
+
+    try {
+
+        // Отбивка в случае отправки данных из формы
+        const closeMain = document.querySelector('.pop-up-order__close');
+        const popUpMain = document.querySelector('.pop-up-order');
+        const backgroundMain = document.querySelector('.pop-up-background');
+        const popUpNumber = document.querySelector('.pop-up-order__number');
+
+        const popUp = document.querySelector('.pop-up-wrapper');
+
+        function popUpIsOpen(id) {
+            popUpMain.classList.add('_active')
+            backgroundMain.classList.add('_active')
+            popUpNumber.innerHTML = id
+
         }
 
-        initForm() {
+        closeMain.addEventListener('click', () => {
+            popUpMain.classList.remove('_active')
+            backgroundMain.classList.remove('_active')
+        });
 
-            const phoneOptions = {
-                mask: '+{7} (000) 000-00-00',
-            };
+        // При нажатии на задний фон закрыввается окно
+        backgroundMain.addEventListener('mousedown', () => {
+            popUpMain.classList.remove('_active')
+            backgroundMain.classList.remove('_active')
+            popUp.classList.remove('_active')
 
-            new IMask(this.tel, phoneOptions);
+        });
 
-            this.inputWrappers.forEach(wrapper => {
-                const input = wrapper.querySelector('input');
-                const errText = wrapper.querySelector('p');
-                input.addEventListener('input', (event) => this.handleInputChanges(event, input, errText));
-                input.addEventListener('blur', (event) => this.handleInputBlur(event, input, errText));
-            })
-
-            this.button.addEventListener('click', (event) => {
-                event.preventDefault();
-                let isValid = this.form.checkValidity()
-                if (isValid) {
-                    this.sendForm(event);
-                }
-            })
-        }
-
-        setBtnDisabled() {
-            this.button.disabled = true;
-            this.button.classList.add('_disabled');
-        }
-
-        setBtnActive() {
-            this.button.disabled = false;
-            this.button.classList.remove('_disabled');
-        }
-
-        handleInputChanges = (event, input, errText) => {
-            (this.form.checkValidity()) ? this.setBtnActive() : this.setBtnDisabled();
-
-            if (input.validity.valid && errText.classList.contains('_unhide')) {
-                errText.classList.remove('_unhide');
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                popUpMain.classList.remove('_active')
+                backgroundMain.classList.remove('_active')
             }
+        });
 
-        }
+        const form = document.getElementById('form')
+        form.addEventListener('submit', formSend)
 
-        handleInputBlur = (event, input, errText) => {
-            if (!input.validity.valid) {
-                errText.classList.add('_unhide');
-            }
-        }
 
-        sendForm(event) {
-            let formData = new FormData(this.form);
+        async function formSend(e) {
+            e.preventDefault()
 
-            const firstForm = document.querySelector('.repair-request-form__form')
-            const secondForm = document.querySelector('.contacts__form')
+            let error = formValidate(form)
 
-            const elementsFirstForm = firstForm.elements
-            const elementsSecondForm = secondForm.elements
 
-            for (let i = 0; i < elementsFirstForm.length; i++) {
-                elementsFirstForm[i].setAttribute('disabled', 'true');
-                this.button.classList.add('_disabled');
-            }
-            
-            for (let i = 0; i < elementsSecondForm.length; i++) {
-                elementsSecondForm[i].setAttribute('disabled', 'true');
-                this.button.classList.add('_disabled');
-            }
+            if (error === 0) {
+                let formData = new FormData(form);
 
-            fetch('/post.php', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Access-Control-Allow-Origin': "*"
-                }
-            }).then(response => {
-                for (let i = 0; i < elementsFirstForm.length; i++) {
-                    elementsFirstForm[i].removeAttribute('disabled');
-                    this.button.classList.remove('_disabled');
-                }
-                for (let i = 0; i < elementsSecondForm.length; i++) {
-                    elementsSecondForm[i].removeAttribute('disabled');
-                    this.button.classList.remove('_disabled');
-                }
-
-                    return response.json()
+                fetch('/post.php', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Access-Control-Allow-Origin': "*"
+                    }
                 })
-                .then(data => {
-    console.log(data);
-                    var orderNumberElement = document.querySelector('.__js__order-number');
+                    .then(res => {
+                        return res.json()
+                    })
 
-// Установить значение элемента
-                    orderNumberElement.textContent = data.id;
+                    .then(data => {
+                        popUpIsOpen(data.id)
+                    })
 
-                    this.showModal();
-                    this.form.reset();
-                })
-                .catch(err => {
-                    console.log(err);
-                })
+                    .catch(err => {
+                        console.log(err);
+                    })
+
+            }
         }
 
 
-        hideModal() {
-            this.modalThanks.addEventListener('click', (e) => {
-                if (e.target === e.currentTarget || e.target.classList.contains('modal-thanks__close')) {
-                    this.modalThanks.classList.remove('modal-thanks__overlay_active');
+
+        function formValidate(form) {
+            let error = 0
+            let formReq = document.querySelectorAll('._req')
+
+            for (let index = 0; index < formReq.length; index++) {
+                const input = formReq[index]
+                formRemoveError(input)
+
+                if (input.classList.contains('_email')) {
+                    if (emailTest(input)) {
+                        formAddError(input)
+                        error++
+                    }
+                } else if (
+                    input.getAttribute('type') === 'checkbox' &&
+                    input.checked === false
+                ) {
+
+                    formAddError(input)
+                    error++
+                } else if (input.classList.contains('_phone')) {
+                    validatePhoneNumberInput(input)
+                    if (!phoneTest(input)) {
+                        formAddError(input)
+                        error++
+                    }
                 }
-            });
+                else {
+                    if (input.value === '') {
+
+                        formAddError(input)
+                        error++
+                    }
+                }
+
+            }
+            return error
+
         }
 
-        showModal() {
-            this.modalThanks.classList.add('modal-thanks__overlay_active');
-            this.hideModal();
+
+        function formAddError(input) {
+            input.parentElement.classList.add('_error')
+            input.classList.add('_error')
         }
+        function formRemoveError(input) {
+            input.parentElement.classList.remove('_error')
+            input.classList.remove('_error')
+        }
+        function phoneTest(input) {
+            return /\d{4}/.test(input.value)
+        }
+        function validatePhoneNumberInput(input) {
+            // Удаление всех символов, кроме цифр
+            input.value = input.value.replace(/\D/g, '');
+        }
+        function emailTest(input) {
+            return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value)
+        }
+
+
+    } catch (error) {
+        console.log(error);
     }
 
-    new ValidationForm(document.querySelector('.contacts__form')).initForm();
-    new ValidationForm(document.querySelector('.repair-request-form__form')).initForm();
 
 
 })
-
-
-        // // модальное окно с формой
-        // const button = document.querySelector('.about__callback-form-btn');
-        // const close = document.querySelector('.pop-up-form__close');
-        // const popUp = document.querySelector('.pop-up-wrapper');
-        // const background = document.querySelector('.pop-up-background');
-
-        // // кнопка отрытия отбивки
-        // const aboutButton = document.querySelector('.pop-up-form__button-about');
-
-        // // отбивка
-        // const popUpMain = document.querySelector('.pop-up-order');
-        // const closeMain = document.querySelector('.pop-up-order__close');
-
-
-        // button.addEventListener('click', () => {
-        //     popUp.classList.add('_active')
-        //     background.classList.add('_active')
-        // });
-        // // Открывает отбивку и закрывает поп ап с формой
-        // function popUpIsOpen() {
-        //     popUpMain.classList.add('_active')
-        //     popUp.classList.remove('_active')
-        // }
-
-        // close.addEventListener('mousedown', () => {
-        //     popUp.classList.remove('_active')
-        //     background.classList.remove('_active')
-        // });
-
-        // background.addEventListener('click', () => {
-        //     background.classList.remove('_active')
-        //     popUpMain.classList.remove('_active')
-        //     popUp.classList.remove('_active')
-
-        // });
-
-

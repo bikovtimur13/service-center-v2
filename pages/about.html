@@ -19,6 +19,7 @@
     <title>Сервисный центр массажного оборудования, массажных кресел, массажеров и фитнес тренажеров | Yamaguchi</title>
 </head>
 <body>
+    <div class="pop-up-background"></div>
     <div class="header-fixed">
         <div class="header-fixed__mobile-menu">
             <div class="header__logo">
@@ -264,7 +265,41 @@
                             <button class="about__callback-form-btn"><span>Оставить заявку</span></button>
                         </div>
                         <img src="../assets/images/about/about-3-v1.webp" alt="" class="about__callback-form-img">
+                        <div class="pop-up-order">
+                            <div class="pop-up-order__wrapper">
+                                <img src="../assets/images/pop-up/item.svg" alt="Ок" class="pop-up-order__img">
+                                <span class="pop-up-order__subtitle">Спасибо!</span>
+                                <span class="pop-up-order__number-text">Номер вашей заявки <span class="pop-up-order__number"> 7845</span></span>
+                                <span class="pop-up-order__text">Наш менеджер свяжется с вами в течение 30 минут</span>
+                                <img src="../assets/images/pop-up/close.svg" alt="закрыть" class="pop-up-order__close">
+                            </div>
+                        </div>
+                        <div class="pop-up-wrapper">
+                            <div class="pop-up-form">
+                                
+                                <div class="pop-up-form__wrapper">
+                                    <img class="pop-up-form__close" src="../assets/images/pop-up/close.svg" alt="close">
+                                    <div class="pop-up-form">
+                                            <h2 class="pop-up-form__subtitle">Заказать обратный звонок</h2>
+                                            <span class="pop-up-form__text">Введите имя и телефон и наш менеджер перезвонит Вам в течение 5 минут.
+                                                Пожалуйста, не отключайте свой телефон</span>
+                                        <div class="pop-up-form__wrapper">
+                                            <form action="#" id="form-about" class="pop-up-form__pop-up-form">
+                                                <input type="text" class="pop-up-form__input _req" placeholder="Ваше имя">
+                                                <input type="text" class="pop-up-form__input _req _phone" placeholder="Контактный телефон">
+                                                <label class="pop-up-form__checkbox">
+                                                    <input checked type="checkbox" class="_req" value="value">
+                                                    <span  class="checkbox-text"><a href="/pages/personal-data.html">Я ознакомлен(а) с <span class="pop-up-form__link"> политикой конфиденциальности </span> и даю согласие на обработку персональных данных</a></span>
+                                                </label>     
+                                                <button class="pop-up-form__button-about" type="submit">Перезвонить мне</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -345,6 +380,7 @@
     </main>
 
     <script src="/scripts/imask.js"></script>
+    <script src="/scripts/about.js"></script>
     <script src="/scripts/main-page.js"></script>
 </body>
 </html>

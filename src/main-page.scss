@@ -1332,6 +1332,7 @@ html {
 .repair-request-form{
 
   &__container{
+    position: relative;
 
   }
 
@@ -3338,6 +3339,7 @@ html {
   &__callback-form{
     display: flex;
     justify-content: space-between;
+    position: relative;
     width: 100%;
     border-radius: 15px;
     background-color: #464344;
@@ -4001,6 +4003,7 @@ html {
 .request {
   padding-bottom: 102px;
   margin-top: 45px;
+  position: relative;
 
   @include nsm {
       .container-box {
@@ -4328,6 +4331,7 @@ html {
               cursor: pointer;
               
           }
+
           
           &:checked+label {
               position: relative;
@@ -4817,320 +4821,690 @@ html {
   }
 }
 
-// .pop-up-wrapper {
-//   opacity: 0;
-//   visibility: hidden; 
-//   transition: visibility  0.3s ease;
-// }
+.pop-up-order {
+  background-color: #464344;
+  position: absolute;
+  border-radius: 20px;
+  width: 542px;
+  height: 359px;
+  top: 0px;
+  margin-left: 350px;
+  z-index: 600;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  @include nlgxx {
+    margin-left: 18.46vw;
+  }
+  @include nlgx {
+    border-radius: 1.27vw;
+    width: 34.52vw;
+    height: 22.87vw;
+    top: 12.74vw;
+    margin-left: 31.617834vw;
+  }
+  @include nsm {
+    border-radius: 2.50vw;
+    width: 93.75vw;
+    height: 93.75vw;
+    top: 31.56vw;
+    margin-left: -5vw;
+  }
 
-// .pop-up-form {
-//   background-color: #fff;
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   z-index: 50001;
-//   border-radius: 20px;
-//   width: 709px;
-//   margin-left: -354.5px;
-//   padding: 0 40px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    @include nlgx {
+      padding-top: 3.18vw;
+      
+    }
+    @include nsm {
+      padding-top: 15.63vw;
+    }
+  }
 
+  &__img {
+    width: 69px;
+    margin-bottom: 21px;
+    @include nlgx {
+      width: 4.39vw;
+      margin-bottom: 1.34vw;
+      
+    }
+    @include nsm {
+      width: 18.75vw;
+      margin-bottom: 7.81vw;
+    }
+  }
 
+  &__subtitle {
+    font-family: $font-open-sans;
+    font-weight: 700;
+    font-size: 43px;
+    line-height: 48.59px;
+    margin-bottom: 16px;
+    @include nlgx {
+      font-size: 2.74vw;
+      line-height: 3.0949vw;
+      margin-bottom: 1.02vw;
+    }
+    @include nsm {
+      font-size: 6.56vw;
+      line-height: 10.2125vw;
+      margin-bottom: 0px;
+    }
+  }
 
-//   @include nlgx {
-//       border-radius: 1.27vw;
-//       width: 45.16vw;
-//       margin-left: -22.57961vw;
-//       padding: 0 2.55vw;
-//   }
-//   @include nsm {
-//       border-radius: 2.50vw;
-//       width: 93.75vw;
-//       margin-left: -46.88vw;
-//       padding: 0 3.75vw;
-//   }
+  &__number-text {
+    font-size: 20px;
+    line-height: 32.8px;
+    margin-bottom: 26px;
+    @include nlgx {
+      font-size: 1.27vw;
+      line-height: 2.0891vw;
+      margin-bottom: 1.66vw;
+    }
+    @include nsm {
+      font-size: 5.63vw;
+      line-height: 9.225vw;
+      margin-bottom: 7.81vw;
+    }
+  }
 
+  &__number {
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 32.8px;
+    @include nlgx {
+      font-size: 1.27vw;
+      line-height: 2.0891;
+    }
+    @include nsm {
+      font-size: 5.63vw;
+      line-height: 9.225vw;
+    }
+  }
 
-//   &__wrapper {
-//       position: relative;
-//   }
+  &__text {
+    font-family: $font-gilroy;
+    font-weight: 300;
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    width: 417px;
+    @include nlgx {
+      font-size: 1.15vw;
+      line-height: 1.91vw;
+      width: 26.56vw;
+    }
+    @include nsm {
+      font-size: 5vw;
+      line-height: 8.2vw;
+      width: 73.13vw;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    @include nlgx {
+      top: 0.64vw;
+      right: 0.96vw;
+      width: 4.39vw;
+    }
+    @include nsm {
+      top: 4.06vw;
+      right: 3.75vw;
+      width: 7.50vw;
+    }
+  }
+}
+.pop-up-order._active {
+  opacity: 1;
+  visibility: visible;
+}
+.pop-up-order-mob {
+  background-color: #464344;
+  position: absolute;
+  border-radius: 20px;
+  width: 542px;
+  height: 359px;
+  top: 0px;
+  margin-left: 350px;
+  z-index: 600;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  @include nlgxx {
+    margin-left: 18.46vw;
+  }
+  @include nlgx {
+    border-radius: 1.27vw;
+    width: 34.52vw;
+    height: 22.87vw;
+    top: 12.74vw;
+    margin-left: 31.617834vw;
+  }
+  @include nsm {
+    border-radius: 2.50vw!important;
+    width: 93.75vw!important;
+    height: 93.75vw!important;
+    top: 31.56vw!important;
+    margin-left: 1.8vw!important;
+  }
 
-//   &__close {
-//       transform: rotate(90deg);
-//       position: absolute;
-//       top: 0;
-//       right: -30px;
-//       z-index: 50005;
-//       @include nlgx {
-//           right: -1.91vw;
-//           width: 3.12vw;
-//       }
-//       @include nsm {
-//           right: -2vw; 
-//           top: 1vw; 
-//           width: 7.50vw;
-//       }
-//   }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    @include nlgx {
+      padding-top: 3.18vw;
+      
+    }
+    @include nsm {
+      padding-top: 15.63vw!important;
+    }
+  }
 
+  &__img {
+    width: 69px;
+    margin-bottom: 21px;
+    @include nlgx {
+      width: 4.39vw;
+      margin-bottom: 1.34vw;
+      
+    }
+    @include nsm {
+      width: 18.75vw!important;
+      margin-bottom: 7.81vw!important;
+    }
+  }
 
-//   &__subtitle {
-//       font-weight: 900;
-//       font-size: 40px;
-//       line-height: 46.6px;
-//       padding-top: 40px;
-//       margin-bottom: 10px;
-//       @include nlgx {
-//           font-size: 2.55vw;
-//           line-height: 2.9681vw;
-//           padding-top: 2.55vw;
-//           margin-bottom: 0.64vw;
-//       }
-//       @include nsm {
-//           font-size: 6.25vw;
-//           line-height: 6.175vw;
-//           padding-top: 8.44vw;
-//           margin-bottom: 3.13vw;
-//       }
-//   }
+  &__subtitle {
+    font-family: $font-open-sans;
+    font-weight: 700;
+    font-size: 43px;
+    line-height: 48.59px;
+    margin-bottom: 16px;
+    @include nlgx {
+      font-size: 2.74vw;
+      line-height: 3.0949vw;
+      margin-bottom: 1.02vw;
+    }
+    @include nsm {
+      font-size: 6.56vw!important;
+      line-height: 10.2125vw!important;
+      margin-bottom: 0px!important;
+      margin-top: 0px!important;
+    }
+  }
 
-//   &__text {
-//       font-size: 20px;
-//       line-height: 32.8px;
-//       width: 629px;
-//       @include nlgx {
-//           font-size: 1.27vw;
-//           line-height: 2.0891vw;
-//           width: 629px;
-//       }
-//       @include nsm {
-//           font-size: 4.38vw;
-//           line-height: 7.19vw;
-//           width: 86.25vw;
-//       }
-//   }
+  &__number-text {
+    font-size: 20px;
+    line-height: 32.8px;
+    margin-bottom: 26px;
+    @include nlgx {
+      font-size: 1.27vw;
+      line-height: 2.0891vw;
+      margin-bottom: 1.66vw;
+    }
+    @include nsm {
+      font-size: 5.63vw!important;
+      line-height: 9.225vw!important;
+      margin-bottom: 7.81vw!important;
+      margin-top: 0px!important;
+    }
+  }
 
-//   &__pop-up-form {
-//       display: flex;
-//       flex-direction: column;
-//       padding-top: 33px;
-//       @include nlgx {
-//           padding-top: 2.10vw;
-//       }
-//       @include nsm {
-//           padding-top: 4.69vw;
-//       }
-//   }
+  &__number {
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 32.8px;
+    @include nlgx {
+      font-size: 1.27vw;
+      line-height: 2.0891;
+    }
+    @include nsm {
+      font-size: 5.63vw!important;
+      line-height: 9.225vw!important;
+    }
+  }
 
-//   &__input {
-//       border: none;
-//       background-color: #F0F0F0;
-//       height: 70px;
-//       border-radius: 13px;
-//       padding-left: 24px;
-//       font-size: 20px;
-//       @include nlgx {
-//           height: 4.46vw;
-//           border-radius: 0.83vw;
-//           padding-left: 1.53vw;
-//           font-size: 1.27vw;
-//       }
-//       @include nsm {
-//           height: 15.63vw;
-//           border-radius: 3.13vw;
-//           padding-left: 6.25vw;
-//           font-size: 4.38vw;
-//       }
-
-//   }
-//   &__input:nth-of-type(1) {
-//       margin-bottom: 16px;
-//       @include nlgx {
-//           margin-bottom: 1.02vw;
-//       }
-//       @include nsm {
-//           margin-bottom: 3.75vw;
-//       }
-//   }
-//   &__input:nth-of-type(2) {
-//       margin-bottom: 23px;
-//       @include nlgx {
-//           margin-bottom: 1.46vw;
-//       }
-//       @include nsm {
-//           margin-bottom: 4.69vw;
-//       }
-//   }
-//   &__input::placeholder {
-//       color: #868686;
-//       font-size: 20px;
-//       @include nlgx {
-//           font-size: 1.27vw;
-//       }
-//       @include nsm {
-//           font-size: 4.38vw;
-//       }
-//   }
-
-//  &__checkbox {
-//       display: block;
-//       margin-bottom: 37px;
-//       @include nlgx {
-//           margin-bottom: 2.36vw;
-//       }
-//       @include nsm {
-//           margin-bottom: 10.94vw;
-//       }
-//   }
-
-// &__checkbox>input {
-//       position: absolute;
-//       z-index: -1;
-//       opacity: 0;
-//     }
+  &__text {
+    font-family: $font-gilroy;
+    font-weight: 300;
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    width: 417px;
+    @include nlgx {
+      font-size: 1.15vw;
+      line-height: 1.91vw;
+      width: 26.56vw;
+    }
+    @include nsm {
+      font-size: 5vw!important;
+      line-height: 8.2vw!important;
+      width: 73.13vw!important;
+      margin-top: 0px!important;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    @include nlgx {
+      top: 0.64vw;
+      right: 0.96vw;
+      width: 4.39vw;
+    }
+    @include nsm {
+      top: 4.06vw!important;
+      right: 3.75vw!important;
+      width: 7.50vw!important;
+    }
+  }
+}
+.pop-up-order-mob._active {
+  opacity: 1;
+  visibility: visible;
   
-//     &__checkbox>span {
-//       display: inline-flex;
-//       align-items: start;
-//       user-select: none;
-//       font-size: 18px;
-//       line-height: 24.2px;
+}
+
+.pop-up-background._active::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 50;
+  opacity: 0.7;
+  visibility: visible;
+}
+
+// Серый фон при открытии модального окна
+.background {
+  position: relative;
+  z-index: inherit;
+}
+
+// Стили ошибок при неправельном заполнении формы
+.form__body {
+  position: relative;
+}
+.form__body:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.9) url('./loading.gif') center / 50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.form__body._sending:after {
+  opacity: 1;
+  visibility: visible;
+}
+.form__item {
+}
+.form__label {
+}
+.form__input._error {
+  box-shadow: 0 0 15px red;
+}
+._req {
+}
+._email {
+}
+.checkbox._error {
+  box-shadow: 0 0 15px red;
+}
+.request__form__checking._error {
+  box-shadow: 0 0 15px red;
+}
+
+
+.pop-up-wrapper {
+  opacity: 0;
+  visibility: hidden; 
+}
+
+.pop-up-form {
+  background-color: #464344;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 50000;
+  border-radius: 20px;
+  width: 709px;
+  margin-left: -354.5px;
+  padding: 0 40px;
+
+
+
+  @include nlgx {
+      border-radius: 1.27vw;
+      width: 45.16vw;
+      margin-left: -22.57961vw;
+      padding: 0 2.55vw;
+  }
+  @include nsm {
+      border-radius: 2.50vw;
+      width: 93.75vw;
+      margin-left: -46.88vw;
+      padding: 0 3.75vw;
+  }
+
+
+  &__wrapper {
+      position: relative;
+  }
+
+  &__close {
+      transform: rotate(90deg);
+      position: absolute;
+      top: 0;
+      right: -30px;
+      z-index: 50005;
+      @include nlgx {
+          right: -1.91vw;
+          width: 3.12vw;
+      }
+      @include nsm {
+          right: -2vw; 
+          top: 1vw; 
+          width: 7.50vw;
+      }
+  }
+
+
+  &__subtitle {
+      font-weight: 900;
+      font-size: 40px;
+      line-height: 46.6px;
+      padding-top: 40px;
+      margin-bottom: 10px;
+      @include nlgx {
+          font-size: 2.55vw;
+          line-height: 2.9681vw;
+          padding-top: 2.55vw;
+          margin-bottom: 0.64vw;
+      }
+      @include nsm {
+          font-size: 6.25vw;
+          line-height: 6.175vw;
+          padding-top: 8.44vw;
+          margin-bottom: 3.13vw;
+      }
+  }
+
+  &__text {
+      font-size: 20px;
+      line-height: 32.8px;
+      width: 629px;
+      @include nlgx {
+          font-size: 1.27vw;
+          line-height: 2.0891vw;
+          width: 629px;
+      }
+      @include nsm {
+          font-size: 4.38vw;
+          line-height: 7.19vw;
+          width: 86.25vw;
+      }
+  }
+
+  &__pop-up-form {
+      display: flex;
+      flex-direction: column;
+      padding-top: 33px;
+      @include nlgx {
+          padding-top: 2.10vw;
+      }
+      @include nsm {
+          padding-top: 4.69vw;
+      }
+  }
+
+  &__input {
+      border: none;
+      background-color: #F0F0F0;
+      height: 70px;
+      border-radius: 13px;
+      padding-left: 24px;
+      font-size: 20px;
+      @include nlgx {
+          height: 4.46vw;
+          border-radius: 0.83vw;
+          padding-left: 1.53vw;
+          font-size: 1.27vw;
+      }
+      @include nsm {
+          height: 15.63vw;
+          border-radius: 3.13vw;
+          padding-left: 6.25vw;
+          font-size: 4.38vw;
+      }
+
+  }
+  &__input:nth-of-type(1) {
+      margin-bottom: 16px;
+      @include nlgx {
+          margin-bottom: 1.02vw;
+      }
+      @include nsm {
+          margin-bottom: 3.75vw;
+      }
+  }
+  &__input:nth-of-type(2) {
+      margin-bottom: 23px;
+      @include nlgx {
+          margin-bottom: 1.46vw;
+      }
+      @include nsm {
+          margin-bottom: 4.69vw;
+      }
+  }
+  &__input::placeholder {
+      color: #868686;
+      font-size: 20px;
+      @include nlgx {
+          font-size: 1.27vw;
+      }
+      @include nsm {
+          font-size: 4.38vw;
+      }
+  }
+
+ &__checkbox {
+      display: block;
+      margin-bottom: 37px;
+      @include nlgx {
+          margin-bottom: 2.36vw;
+      }
+      @include nsm {
+          margin-bottom: 10.94vw;
+      }
+  }
+
+  &__checkbox>input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+  
+    &__checkbox>span {
+      display: inline-flex;
+      align-items: start;
+      user-select: none;
+      font-size: 18px;
+      line-height: 24.2px;
   
       
-//       @include nlgx {
-//         font-size: 1.15vw;
-//         line-height: 1.59vw;
-//         // margin-bottom: 3.18vw;
-//       }
-//       @include nsm {
-//         font-size: 3.75vw;
-//         line-height: 5.94vw;
+      @include nlgx {
+        font-size: 1.15vw;
+        line-height: 1.59vw;
+        // margin-bottom: 3.18vw;
+      }
+      @include nsm {
+        font-size: 3.75vw;
+        line-height: 5.94vw;
     
-//       }
-//     }
+      }
+    }
   
-//     &__checkbox>span::before {
-//       content: '';
-//       display: inline-block;
-//       width: 28px;
-//       height: 28px;
-//       flex-shrink: 0;
-//       flex-grow: 0;
-//       border: 2px solid #292D32;
-//       border-radius: 8px;
-//       margin-right: 20px;
-//       background-repeat: no-repeat;
-//       background-position: center center;
-//       background-size: 50% 50%;
-//       margin-top: 4px;
-//       @include nlgx {
-//           margin-top: 0.25vw;
-//           margin-right: 1.27vw;
-//           width: 1.78vw;
-//           height: 1.78vw;
-//           border-radius: 0.51vw;
-//       }
-//       @include nsm {
-//         width: 6.25vw;
-//         height: 6.25vw;
-//         margin-right: 6.25vw;
-//         border-radius: 2.10vw;
-//         border: 1px solid #292D32;
+    &__checkbox>span::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 2px solid #292D32;
+      border-radius: 8px;
+      margin-right: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+      margin-top: 4px;
+      @include nlgx {
+          margin-top: 0.25vw;
+          margin-right: 1.27vw;
+          width: 1.78vw;
+          height: 1.78vw;
+          border-radius: 0.51vw;
+      }
+      @include nsm {
+        width: 6.25vw;
+        height: 6.25vw;
+        margin-right: 6.25vw;
+        border-radius: 2.10vw;
+        border: 1px solid #292D32;
   
-//       }
-//     }
+      }
+    }
 
-//     &__checkbox._error>span::before {
-//       box-shadow: 0 0 15px red;
-//     }
+    &__checkbox._error>span::before {
+      box-shadow: 0 0 15px red;
+    }
   
-//     /* стили при наведении курсора на checkbox */
-//     &__checkbox>input:not(:disabled):not(:checked)+span:hover::before {
-//       border-color: #89bbf3;
-//     }
+    /* стили при наведении курсора на checkbox */
+    &__checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+      border-color: #89bbf3;
+    }
   
-//     /* стили для активного чекбокса (при нажатии на него) */
-//     &__checkbox>input:not(:disabled):active+span::before {
-//       background-color: #89bbf3;
-//       border-color: #89bbf3;
-//     }
+    /* стили для активного чекбокса (при нажатии на него) */
+    &__checkbox>input:not(:disabled):active+span::before {
+      background-color: #89bbf3;
+      border-color: #89bbf3;
+    }
   
-//     /* стили для чекбокса, находящегося в фокусе */
-//     &__checkbox>input:focus+span::before {
-//       box-shadow: 0px 0px 10px 2px rgb(108, 154, 253);
-//     }
+    /* стили для чекбокса, находящегося в фокусе */
+    &__checkbox>input:focus+span::before {
+      box-shadow: 0px 0px 10px 2px rgb(108, 154, 253);
+    }
   
-//     /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-//     &__checkbox>input:focus:not(:checked)+span::before {
-//       border-color: #80bdff;
-//     }
+    /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+    &__checkbox>input:focus:not(:checked)+span::before {
+      border-color: #80bdff;
+    }
   
-//     /* стили для чекбокса, находящегося в состоянии checked */
-//     &__checkbox>input:checked+span::before {
-//       border-color: #2468FF;
-//       background-color: #2468FF;
-//       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
-//     }
+    /* стили для чекбокса, находящегося в состоянии checked */
+    &__checkbox>input:checked+span::before {
+      border-color: #51c0ff;
+      background-color: #51c0ff;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
   
-//     /* стили для чекбокса, находящегося в состоянии disabled */
-//     &__checkbox>input:disabled+span::before {
-//       background-color: #e9ecef;
-//     }
+    /* стили для чекбокса, находящегося в состоянии disabled */
+    &__checkbox>input:disabled+span::before {
+      background-color: #e9ecef;
+    }
 
-//   & .checkbox-text {
-//       font-size: 16px;
-//       align-self: start;
-//       @include nlgx {
-//           font-size: 1.02vw;
-//       }
-//       @include nsm {
-//           font-size: 3.75vw;
-//       }
-//     }
+  & .checkbox-text {
+      font-size: 16px;
+      align-self: start;
+      @include nlgx {
+          font-size: 1.02vw;
+      }
+      @include nsm {
+          font-size: 3.75vw;
+      }
+    }
 
-//   &__button {
-//       font-size: 27px;
-//       line-height: 26.68px;
-//       padding: 20px 201px;
-//       margin-bottom: 40px;
-//       @include nlgx {
-//           font-size: 1.72vw;
-//           line-height:  1.6993vw;
-//           padding: 1.27vw 12.80vw;
-//           margin-bottom: 2.55vw;
-//       }
-//       @include nsm {
-//           font-size: 5vw;
-//           line-height: 4.9406vw;
-//           padding: 4.69vw 22.19vw;
-//           margin-bottom: 10vw;
-//       }
-//   }
-// }
+    &__link {
+      // text-decoration: solid!important;
+        // outline: #2468FF!important;
+      color: #51c0ff;
+      position: relative;
+      // border-bottom: solid 1px #0000FF;
+    }
+  
+    &__link:after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      background-color: #51c0ff;
+      height: 1px;
+      width: 239px;
+      @include nlg {
+        width: 15.54vw;
+      }
+      @include nsm {
+        bottom: 5.95vw;
+        width: 18.2vw;
+      }
+    }
+  
+    &__link:before {
+      @include nsm {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        right: 1vw;
+        background-color: #51c0ff;
+        height: 1px;
+        width: 37.7vw;
 
-// .pop-up-wrapper._active {
-//   opacity: 1;
-//   visibility: visible;
-// }
+      }
+    }
 
-// .pop-up-background {
-//   position: absolute;
-//   background-color: black;
-//   width: 100%;
-//   height: 2700px;
-//   z-index: 50000;
-//   opacity: 0;
-//   visibility: hidden;
-//   transition: all  0.5s ease;
+  &__button-about {
+      font-size: 27px;
+      line-height: 26.68px;
+      padding: 20px 201px;
+      margin-bottom: 40px;
+      background-color: #51c0ff;
+      border-radius: 12px;
+      font-family: $font-gilroy;
+      font-weight: 800;
+
+      @include nlgx {
+          font-size: 1.72vw;
+          line-height:  1.6993vw;
+          padding: 1.27vw 12.80vw;
+          margin-bottom: 2.55vw;
+      }
+      @include nsm {
+          font-size: 5vw;
+          line-height: 4.9406vw;
+          padding: 4.69vw 22.19vw;
+          margin-bottom: 10vw;
+      }
+  }
+}
+
+.pop-up-wrapper._active {
+  opacity: 1;
+  visibility: visible;
+}
 
 
-//   @include nlgx {
-//       height: 173vw;
-//   }
-//   @include nsm {
-//       height: 730.75vw;
-//   }
-// }
-// .pop-up-background._active {
-//   opacity: 0.7;
-//   visibility: visible;
-
-// }
